@@ -23,3 +23,29 @@ const data = ref<Array<ImageType>>(rawData)
   </footer>
 </template>
 
+<style>
+main {
+  display: grid;
+  --content-width: 60%;
+  grid-template-columns:
+      [full-width-start]
+      1fr
+      [content-start]
+      var(--content-width)
+      [content-end]
+      1fr
+      [full-width-end];
+}
+
+main > * {
+  grid-column: content;
+}
+
+ul {
+  --max-card-width: 20ch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--max-card-width));
+  list-style: none;
+  gap: var(--spacing-unrelated-items);
+}
+</style>
