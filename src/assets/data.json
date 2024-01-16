@@ -1,0 +1,37 @@
+[
+  {
+    "src": "https://http.cat/100",
+    "description": "A flying cat",
+    "votes": 100
+  },
+  {
+    "src": "https://http.cat/101",
+    "description": "Loads of cats looking at the camera",
+    "votes": -3
+  },
+  {
+    "src": "https://http.cat/201",
+    "description": "A cat walking on fresh cement and ruining it",
+    "votes": 20
+  },
+  {
+    "src": "https://http.cat/203",
+    "description": "A cat with a sheriff vest",
+    "votes": 1000
+  },
+  {
+    "src": "https://http.cat/208",
+    "description": "A cute kitten with their hand raised",
+    "votes": 100000
+  },
+  {
+    "src": "https://http.cat/301",
+    "description": "A cat chillin' on the beach",
+    "votes": -201
+  },
+  {
+    "src": "https://http.cat/415",
+    "description": "A cat playing DJ",
+    "votes": -40294
+  }
+]
