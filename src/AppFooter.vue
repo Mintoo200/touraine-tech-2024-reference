@@ -10,5 +10,6 @@ footer {
   margin-top: var(--spacing-unrelated-items);
   padding: var(--spacing-related-items);
   border-top: 1px solid var(--color-footer-separator);
+  min-height: 5rem;
 }
 </style>
