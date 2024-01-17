@@ -18,6 +18,9 @@
 
   --color-card-border: var(--grey);
   --color-controls-background: hsl(0, 0%, 15%, .3);
+  --color-separator: var(--grey);
+  --color-header-separator: var(--color-separator);
+  --color-footer-separator: var(--color-separator);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +32,9 @@
 
     --color-card-border: var(--grey);
     --color-controls-background: hsl(0, 0%, 15%, .65);
+    --color-separator: var(--white);
+    --color-header-separator: var(--color-separator);
+    --color-footer-separator: var(--color-separator);
   }
 }
 
