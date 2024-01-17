@@ -70,11 +70,39 @@ function toggle(newStatus: Status): Status {
   width: auto;
 }
 
+.card button[aria-checked="true"] svg {
+  scale: 1.5;
+  --shake-amplitude: 50deg;
+  --scale-transition-duration: 50ms;
+  --shake-delay: calc(var(--scale-transition-duration) + 50ms);
+  --shake-duration: 300ms;
+  transition: scale ease-in-out var(--scale-transition-duration);
+  animation:
+      shake
+      linear
+      calc(var(--shake-duration) / 2)
+      2
+      var(--shake-delay);
+}
 .card button[aria-checked="true"] svg[aria-label="Upvote"] {
   color: var(--color-upvote-active);
 }
 .card button[aria-checked="true"] svg[aria-label="Downvote"] {
   color: var(--color-downvote-active);
+}
+
+@keyframes shake {
+  0%, 100% {
+    rotate: 0;
+  }
+
+  25% {
+    rotate: calc((var(--shake-amplitude) / 2) - var(--shake-amplitude));
+  }
+
+  75% {
+    rotate: calc(var(--shake-amplitude) - (var(--shake-amplitude) / 2));
+  }
 }
 
 .card output {

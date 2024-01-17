@@ -35,7 +35,7 @@
   --color-text: var(--grey);
 
   --color-card-border: var(--grey);
-  --color-controls-background: hsl(0, 0%, 15%, .3);
+  --color-controls-background: hsl(0, 0%, 100%, .65);
   --color-separator: var(--grey);
   --color-header-separator: var(--color-separator);
   --color-footer-separator: var(--color-separator);
@@ -51,7 +51,7 @@
     --color-text: var(--white);
 
     --color-card-border: var(--grey);
-    --color-controls-background: hsl(0, 0%, 15%, .65);
+    --color-controls-background: hsl(0, 0%, 0%, .65);
     --color-separator: var(--white);
     --color-header-separator: var(--color-separator);
     --color-footer-separator: var(--color-separator);
