@@ -10,6 +10,8 @@
   --white: white;
   --black: black;
   --grey: hsl(0, 0%, 15%);
+  --cyan: hsl(180deg, 100%, 50%);
+  --red: hsl(0, 100%, 50%);
 
   --font:
     Inter,
@@ -37,6 +39,8 @@
   --color-separator: var(--grey);
   --color-header-separator: var(--color-separator);
   --color-footer-separator: var(--color-separator);
+  --color-upvote-active: var(--cyan);
+  --color-downvote-active: var(--red);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,6 +55,8 @@
     --color-separator: var(--white);
     --color-header-separator: var(--color-separator);
     --color-footer-separator: var(--color-separator);
+    --color-upvote-active: var(--cyan);
+    --color-downvote-active: var(--red);
   }
 }
 

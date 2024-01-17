@@ -70,6 +70,13 @@ function toggle(newStatus: Status): Status {
   width: auto;
 }
 
+.card button[aria-checked="true"] svg[aria-label="Upvote"] {
+  color: var(--color-upvote-active);
+}
+.card button[aria-checked="true"] svg[aria-label="Downvote"] {
+  color: var(--color-downvote-active);
+}
+
 .card output {
   font-family: monospace;
   min-width: 4ch;
