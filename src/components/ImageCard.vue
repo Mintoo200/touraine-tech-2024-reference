@@ -1,21 +1,38 @@
 <script setup lang="ts">
 import type { ImageType } from '../ImageType'
-import { ref } from "vue";
+import {computed, ref} from "vue";
 import Upvote from './icons/Upvote.vue';
 import Downvote from './icons/Downvote.vue';
 
 const props = defineProps<{ entry: ImageType }>()
-const votes = ref(props.entry.votes)
+type Status = 'downvoted' | 'neutral' | 'upvoted';
+const status = ref<Status>('neutral')
 const {description, src} = props.entry
+const votes = computed(() => props.entry.votes + +(status.value === 'upvoted') - +(status.value === 'downvoted'))
+function toggle(newStatus: Status): Status {
+  return (status.value === newStatus) ? 'neutral' : newStatus;
+}
 </script>
 
 <template>
   <li class="card">
     <img :src="src" :alt="description">
     <span class="controls">
-      <button @click="() => votes--"><Downvote aria-label="Downvote" /></button>
+      <button
+          role="switch"
+          :aria-checked="status === 'downvoted'"
+          @click="() => status = toggle('downvoted')">
+        <Downvote aria-label="Downvote" />
+      </button>
+
       <output>{{votes}}</output>
-      <button @click="() => votes++"><Upvote aria-label="Upvote" /></button>
+
+      <button
+          role="switch"
+          :aria-checked="status === 'upvoted'"
+          @click="() => status = toggle('upvoted')">
+        <Upvote aria-label="Upvote" />
+      </button>
     </span>
   </li>
 </template>
