@@ -5,6 +5,7 @@ import ImageCard from "./components/ImageCard.vue";
 import type {ImageType} from "@/ImageType";
 import AppHeader from "@/AppHeader.vue";
 import AppFooter from "@/AppFooter.vue";
+import Newsletter from "@/Newsletter.vue";
 
 const data = ref<Array<ImageType>>(rawData)
 </script>
@@ -18,25 +19,44 @@ const data = ref<Array<ImageType>>(rawData)
     </ul>
   </main>
 
+  <Newsletter/>
+
   <AppFooter/>
 </template>
 
 <style>
-main {
+body {
   display: grid;
-  --content-width: 60%;
-  grid-template-columns:
-      [full-width-start]
-      1fr
-      [content-start]
-      var(--content-width)
-      [content-end]
-      1fr
-      [full-width-end];
 }
 
+@media (width > 60ch) {
+  body {
+  --content-width: minmax(60%, 1fr);
+  --right-gutter-min-width: min(30%, 20ch);
+  --left-gutter-min-width: 0;
+  grid-template-columns:
+      [full-width-start left-gutter-start]
+      minmax(var(--left-gutter-min-width), 1fr)
+      [content-start left-gutter-end]
+      var(--content-width)
+      [content-end right-gutter-start]
+      minmax(var(--right-gutter-min-width), 1fr)
+      [full-width-end right-gutter-end];
+  column-gap: var(--spacing-unrelated-items);
+  }
+}
+
+body > header,
+body > footer {
+  grid-column: full-width;
+}
+body > *,
 main > * {
   grid-column: content;
+}
+body > aside,
+main > aside {
+  grid-column: right-gutter;
 }
 
 ul {
@@ -45,7 +65,7 @@ ul {
   width: 100%;
   --min-card-width: 30ch;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--min-card-width), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-card-width)), 1fr));
   list-style: none;
   gap: var(--spacing-unrelated-items);
 }

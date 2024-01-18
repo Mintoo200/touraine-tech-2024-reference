@@ -43,6 +43,7 @@ function toggle(newStatus: Status): Status {
   border: 1px solid var(--color-card-border);
   padding: var(--spacing-related-items);
   position: relative;
+  height: fit-content;
 }
 
 .card img {
@@ -52,7 +53,7 @@ function toggle(newStatus: Status): Status {
   aspect-ratio: 16/9;
 }
 
-.card button {
+button:has(svg) {
   color: inherit;
   border: none;
   background: transparent;
@@ -64,13 +65,13 @@ function toggle(newStatus: Status): Status {
   vertical-align: middle;
 }
 
-.card button svg {
+button svg {
   color: inherit;
   height: 100%;
   width: auto;
 }
 
-.card button[aria-checked="true"] svg {
+button[aria-checked="true"] svg {
   scale: 1.5;
   --shake-amplitude: 50deg;
   --scale-transition-duration: 50ms;
@@ -84,10 +85,10 @@ function toggle(newStatus: Status): Status {
       2
       var(--shake-delay);
 }
-.card button[aria-checked="true"] svg[aria-label="Upvote"] {
+button[aria-checked="true"] svg[aria-label="Upvote"] {
   color: var(--color-upvote-active);
 }
-.card button[aria-checked="true"] svg[aria-label="Downvote"] {
+button[aria-checked="true"] svg[aria-label="Downvote"] {
   color: var(--color-downvote-active);
 }
 
