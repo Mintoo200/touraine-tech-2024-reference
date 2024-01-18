@@ -17,12 +17,16 @@
   width: 100%;
 }
 .newsletter,
-.newsletter form{
+.newsletter form {
   display: grid;
   justify-content: center;
+  justify-items: center;
 }
 label::after {
   content: ": "
+}
+button {
+  width: fit-content;
 }
 h2 {
   margin-top: 0;

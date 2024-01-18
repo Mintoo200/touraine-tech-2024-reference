@@ -24,6 +24,7 @@ menu {
   display: flex;
   list-style: none;
   gap: var(--spacing-indirectly-related-items);
+  align-items: center;
 }
 menu li > a {
   text-decoration: none;
