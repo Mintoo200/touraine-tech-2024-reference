@@ -72,18 +72,28 @@ button svg {
 }
 
 button[aria-checked="true"] svg {
-  scale: 1.5;
+  --scale: 1.5;
+  --scale-transition-duration: 200ms;
+  --scale-bounce-amplitude: calc(var(--scale) + 0.5);
   --shake-amplitude: 50deg;
-  --scale-transition-duration: 50ms;
-  --shake-delay: calc(var(--scale-transition-duration) + 50ms);
+  --shake-delay: var(--scale-transition-duration);
   --shake-duration: 300ms;
-  transition: scale ease-in-out var(--scale-transition-duration);
+  /*transition: scale ease-in-out var(--scale-transition-duration)*/;
   animation:
+      scale-bounce
+        ease-in-out
+        var(--scale-transition-duration)
+        forwards,
       shake
-      linear
-      calc(var(--shake-duration) / 2)
-      2
-      var(--shake-delay);
+        linear
+        calc(var(--shake-duration) / 2)
+        2
+        var(--shake-delay);
+}
+button[aria-checked="true"] svg[aria-label*="vote"] path {
+  stroke: black;
+  stroke-width: 5px;
+  stroke-opacity: 1;
 }
 button[aria-checked="true"] svg[aria-label="Upvote"] {
   color: var(--color-upvote-active);
@@ -103,6 +113,17 @@ button[aria-checked="true"] svg[aria-label="Downvote"] {
 
   75% {
     rotate: calc(var(--shake-amplitude) - (var(--shake-amplitude) / 2));
+  }
+}
+@keyframes scale-bounce {
+  from {
+    scale: 1;
+  }
+  50% {
+    scale: var(--scale-bounce-amplitude);
+  }
+  to {
+    scale: var(--scale);
   }
 }
 
