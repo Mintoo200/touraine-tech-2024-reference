@@ -16,10 +16,16 @@
 .newsletter > * {
   width: 100%;
 }
-label {
-  display: block;
+.newsletter,
+.newsletter form{
+  display: grid;
+  justify-content: center;
 }
 label::after {
   content: ": "
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-related-items);
 }
 </style>
