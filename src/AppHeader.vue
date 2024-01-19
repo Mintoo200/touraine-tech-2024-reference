@@ -1,6 +1,10 @@
+<script setup lang="ts">
+import Logo from "@/components/icons/Logo.vue";
+</script>
+
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125"/>
+    <Logo aria-hidden="true" />
     <menu>
       <li><a href="#">About Pixel</a></li>
       <li><a href="#">Shop</a></li>
@@ -18,6 +22,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding-inline: 15%;
+  padding-block: var(--spacing-related-items);
 }
 
 menu {
@@ -28,5 +33,9 @@ menu {
 }
 menu li > a {
   text-decoration: none;
+}
+.logo {
+  height: 5rem;
+  fill: currentColor;
 }
 </style>
