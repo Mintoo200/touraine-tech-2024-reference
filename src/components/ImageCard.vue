@@ -67,8 +67,8 @@ button:has(svg) {
 
 button svg {
   color: inherit;
-  height: 100%;
-  width: auto;
+  fill: currentColor;
+  height: 1rem;
 }
 
 button[aria-checked="true"] svg {
