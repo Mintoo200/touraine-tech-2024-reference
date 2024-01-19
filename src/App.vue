@@ -59,7 +59,7 @@ main > aside {
   grid-column: right-gutter;
 }
 
-ul {
+ul:has(.card) {
   padding: 0;
   margin: 0;
   width: 100%;
