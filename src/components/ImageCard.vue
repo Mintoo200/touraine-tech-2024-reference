@@ -20,18 +20,18 @@ function toggle(newStatus: Status): Status {
     <span class="controls">
       <button
           role="switch"
-          :aria-checked="status === 'downvoted'"
-          @click="() => status = toggle('downvoted')">
-        <Downvote aria-label="Downvote" />
+          :aria-checked="status === 'upvoted'"
+          @click="() => status = toggle('upvoted')">
+        <Upvote aria-label="Upvote" />
       </button>
 
       <output>{{votes}}</output>
 
       <button
           role="switch"
-          :aria-checked="status === 'upvoted'"
-          @click="() => status = toggle('upvoted')">
-        <Upvote aria-label="Upvote" />
+          :aria-checked="status === 'downvoted'"
+          @click="() => status = toggle('downvoted')">
+        <Downvote aria-label="Downvote" />
       </button>
     </span>
   </li>
