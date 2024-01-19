@@ -7,24 +7,42 @@ import Website from "@/components/icons/Website.vue";
 
 <template>
   <footer>
-    <h2>Cécile Freyd-Foucault</h2>
-    <ul>
-      <li><a href="https://twitter.com/cecilefreydf"><Twitter /></a></li>
-      <li><a href="https://linkedin.com/in/cecile-freydfoucault"><LinkedIn /></a></li>
-      <li><a href="https://cecilefreydf.com/"><Website /></a></li>
-    </ul>
-    <h2>Gauthier Fiorentino</h2>
-    <ul>
-      <li><a href="https://linkedin.com/in/gauthier-fiorentino"><LinkedIn /></a></li>
-      <li><a href="https://github.com/Mintoo200"><GitHub /></a></li>
-    </ul>
-    <h2>Pixel</h2>
-    <ul>
-      <li><a href="#"><Twitter /></a></li>
-      <li><a href="#"><LinkedIn /></a></li>
-      <li><a href="#"><Website /></a></li>
-      <li><a href="#">My Project</a></li>
-    </ul>
+    <address>
+      <h2>Cécile Freyd-Foucault</h2>
+      <ul>
+        <li><a href="https://twitter.com/cecilefreydf">
+          <Twitter/>
+        </a></li>
+        <li><a href="https://linkedin.com/in/cecile-freydfoucault">
+          <LinkedIn/>
+        </a></li>
+        <li><a href="https://cecilefreydf.com/">
+          <Website/>
+        </a></li>
+      </ul>
+      <h2>Pixel</h2>
+      <ul>
+        <li><a href="#">
+          <Twitter/>
+        </a></li>
+        <li><a href="#">
+          <LinkedIn/>
+        </a></li>
+        <li><a href="#">
+          <Website/>
+        </a></li>
+        <li><a href="#">My Project</a></li>
+      </ul>
+      <h2>Gauthier Fiorentino</h2>
+      <ul>
+        <li><a href="https://linkedin.com/in/gauthier-fiorentino">
+          <LinkedIn/>
+        </a></li>
+        <li><a href="https://github.com/Mintoo200">
+          <GitHub/>
+        </a></li>
+      </ul>
+    </address>
     <p class="copyright">
       <small>
         &copy; 2023 Gauthier Fiorentino et Cecile Freyd-Foucault pour <a href="https://touraine.tech">TouraineTech</a>.
@@ -41,28 +59,31 @@ footer {
   border-top: 1px solid var(--color-footer-separator);
   min-height: 5rem;
   display: grid;
+  justify-items: center;
+}
+footer address {
+  display: grid;
   grid-auto-columns: 1fr;
   justify-content: center;
-  grid-auto-flow: row;
+  column-gap: var(--spacing-indirectly-related-items);
 }
-footer > ul:has(> li > :any-link:only-child) {
+footer address > ul:has(> li > :any-link:only-child) {
   margin-bottom: var(--spacing-unrelated-items);
 }
 @media (width > 100ch) {
-  footer {
+  footer address {
     grid-template-rows: [title-start copyright-start] auto [title-end links-start] auto [links-end copyright-start] auto [copyright-end];
   }
-  footer > h2 {
+  footer address > h2 {
     grid-row: title;
   }
-  footer > ul:has(> li > :any-link:only-child) {
+  footer address > ul:has(> li > :any-link:only-child) {
     grid-row: links;
   }
-  footer > .copyright {
-    /*grid-row: copyright;*/
-    /*display: inline-block;*/
-    /*grid-column: 1 / -1;*/
-  }
+}
+
+.copyright {
+  text-align: center;
 }
 
 :any-link {
