@@ -3,4 +3,7 @@ import './assets/base.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('body')
+const app = createApp(App)
+app.provide('queryParams', new URLSearchParams(window.location.search))
+
+app.mount('body')

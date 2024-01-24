@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import rawData from './assets/data.json'
-import {ref} from "vue";
+import {inject, ref} from "vue";
 import ImageCard from "./components/ImageCard.vue";
 import type {ImageType} from "@/ImageType";
 import AppHeader from "@/AppHeader.vue";
@@ -8,6 +8,7 @@ import AppFooter from "@/AppFooter.vue";
 import Newsletter from "@/Newsletter.vue";
 
 const data = ref<Array<ImageType>>(rawData.data)
+const queryParams = inject<URLSearchParams>('queryParams')
 </script>
 
 <template>
@@ -18,6 +19,10 @@ const data = ref<Array<ImageType>>(rawData.data)
       <ImageCard v-for="entry in data" :key="entry.src" :entry="entry" />
       <button type="submit" form="form-vote"><strong>Vote now!</strong></button>
     </form>
+
+    <article>
+      {{ queryParams?.get('vote') }}
+    </article>
   </main>
 
   <Newsletter/>
