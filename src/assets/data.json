@@ -1,102 +1,107 @@
-[
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=1",
-    "description": "A flying cat",
-    "votes": 72
+{
+  "meta": {
+    "basepath": "https://cataas.com/cat/cute"
   },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=2",
-    "description": "Loads of cats looking at the camera",
-    "votes": -85
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=3",
-    "description": "A cat walking on fresh cement and ruining it",
-    "votes": 69
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=4",
-    "description": "A cat with a sheriff vest",
-    "votes": 59
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=5",
-    "description": "A cute kitten with their hand raised",
-    "votes": 41
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=6",
-    "description": "A cat chillin' on the beach",
-    "votes": 379
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=7",
-    "description": "Curious kitten peeking through a cozy blanket fort.",
-    "votes": -25
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=8",
-    "description": "Playful cat chasing sunbeams in a serene garden.",
-    "votes": 138
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=3",
-    "description": "Fluffy feline napping on a sunlit windowsill.",
-    "votes": 359
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=10",
-    "description": "Mischievous cat batting at dangling toy mice.",
-    "votes": 107
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=11",
-    "description": "Elegant cat perched on a vintage bookshelf.",
-    "votes": -159
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=12",
-    "description": "Whiskered friend curled up in a soft basket.",
-    "votes": 442
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=11",
-    "description": "Adorable kitty with wide eyes and a tiny bow tie.",
-    "votes": -80
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=1",
-    "description": "Purring tabby nestled in a pile of autumn leaves.",
-    "votes": 313
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=15",
-    "description": "Sleepy cat nestled in a rainbow-colored blanket.",
-    "votes": -178
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=16",
-    "description": "Playful kittens wrestling in a sea of colorful yarn.",
-    "votes": -36
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=17",
-    "description": "Content cat enjoying a lazy afternoon on a sunny porch.",
-    "votes": 185
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=18",
-    "description": "Graceful feline balancing on a narrow fence post.",
-    "votes": 240
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=2",
-    "description": "Inquisitive kitty investigating a blooming field of flowers.",
-    "votes": 148
-  },
-  {
-    "src": "https://cataas.com/cat/cute?width=180&height=100&q=6",
-    "description": "A cat playing DJ",
-    "votes": 315
-  }
-]
+  "data": [
+    {
+      "id": "1",
+      "description": "A flying cat",
+      "votes": 72
+    },
+    {
+      "id": "2",
+      "description": "Loads of cats looking at the camera",
+      "votes": -85
+    },
+    {
+      "id": "3",
+      "description": "A cat walking on fresh cement and ruining it",
+      "votes": 69
+    },
+    {
+      "id": "4",
+      "description": "A cat with a sheriff vest",
+      "votes": 59
+    },
+    {
+      "id": "5",
+      "description": "A cute kitten with their hand raised",
+      "votes": 41
+    },
+    {
+      "id": "6",
+      "description": "A cat chillin' on the beach",
+      "votes": 379
+    },
+    {
+      "id": "7",
+      "description": "Curious kitten peeking through a cozy blanket fort.",
+      "votes": -25
+    },
+    {
+      "id": "8",
+      "description": "Playful cat chasing sunbeams in a serene garden.",
+      "votes": 138
+    },
+    {
+      "id": "9",
+      "description": "Fluffy feline napping on a sunlit windowsill.",
+      "votes": 359
+    },
+    {
+      "id": "10",
+      "description": "Mischievous cat batting at dangling toy mice.",
+      "votes": 107
+    },
+    {
+      "id": "11",
+      "description": "Elegant cat perched on a vintage bookshelf.",
+      "votes": -159
+    },
+    {
+      "id": "12",
+      "description": "Whiskered friend curled up in a soft basket.",
+      "votes": 442
+    },
+    {
+      "id": "13",
+      "description": "Adorable kitty with wide eyes and a tiny bow tie.",
+      "votes": -80
+    },
+    {
+      "id": "14",
+      "description": "Purring tabby nestled in a pile of autumn leaves.",
+      "votes": 313
+    },
+    {
+      "id": "15",
+      "description": "Sleepy cat nestled in a rainbow-colored blanket.",
+      "votes": -178
+    },
+    {
+      "id": "16",
+      "description": "Playful kittens wrestling in a sea of colorful yarn.",
+      "votes": -36
+    },
+    {
+      "id": "17",
+      "description": "Content cat enjoying a lazy afternoon on a sunny porch.",
+      "votes": 185
+    },
+    {
+      "id": "18",
+      "description": "Graceful feline balancing on a narrow fence post.",
+      "votes": 240
+    },
+    {
+      "id": "19",
+      "description": "Inquisitive kitty investigating a blooming field of flowers.",
+      "votes": 148
+    },
+    {
+      "id": "20",
+      "description": "A cat playing DJ",
+      "votes": 315
+    }
+  ]
+}

@@ -1,40 +1,21 @@
 <script setup lang="ts">
 import type { ImageType } from '../ImageType'
-import {computed, ref} from "vue";
-import Upvote from './icons/Upvote.vue';
-import Downvote from './icons/Downvote.vue';
+import rawData from '../assets/data.json'
 
-const props = defineProps<{ entry: ImageType }>()
-type Status = 'downvoted' | 'neutral' | 'upvoted';
-const status = ref<Status>('neutral')
-const {description, src} = props.entry
-const votes = computed(() => props.entry.votes + +(status.value === 'upvoted') - +(status.value === 'downvoted'))
-function toggle(newStatus: Status): Status {
-  return (status.value === newStatus) ? 'neutral' : newStatus;
+const basepath = rawData.meta.basepath
+const imageDimensions = {
+  height: 100,
+  width: 180,
 }
+const props = defineProps<{ entry: ImageType }>()
+const {description, id} = props.entry
 </script>
 
 <template>
-  <li class="card">
-    <img :src="src" :alt="description">
-    <span class="controls">
-      <button
-          role="switch"
-          :aria-checked="status === 'upvoted'"
-          @click="() => status = toggle('upvoted')">
-        <Upvote aria-label="Upvote" />
-      </button>
-
-      <output>{{votes}}</output>
-
-      <button
-          role="switch"
-          :aria-checked="status === 'downvoted'"
-          @click="() => status = toggle('downvoted')">
-        <Downvote aria-label="Downvote" />
-      </button>
-    </span>
-  </li>
+  <div class="card">
+    <input type="radio" :id="`option-${id}`" name="vote" :value="id">
+    <label :for="`option-${id}`"><img :src="`${basepath}?width=${imageDimensions.width}&height=${imageDimensions.height}&q=${id}`" :alt="description"></label>
+  </div>
 </template>
 
 <style>
@@ -53,53 +34,52 @@ function toggle(newStatus: Status): Status {
   aspect-ratio: 16/9;
 }
 
-button:has(svg) {
-  color: inherit;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  height: 100%;
-  width: auto;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-button svg {
-  color: inherit;
-  fill: currentColor;
-  height: 1rem;
-}
-
-button[aria-checked="true"] svg {
-  --scale: 1.5;
+.card:has(input[type="radio"]) {
   --scale-transition-duration: 200ms;
-  --scale-bounce-amplitude: calc(var(--scale) + 0.5);
-  --shake-amplitude: 50deg;
+  scale: 1;
+  transition: scale ease-in-out var(--scale-transition-duration);
+}
+.card:has(input[type="radio"]):hover,
+.card:has(input[type="radio"]:focus-visible) {
+  --scale: 1.05;
+  scale: var(--scale);
+}
+.card:has(input[type="radio"]:checked) {
+  --scale: 1.1;
+  --scale-bounce-amplitude: calc(var(--scale) + 0.1);
+  --scale-transition-duration: 200ms;
+  --shake-amplitude: 5deg;
   --shake-delay: var(--scale-transition-duration);
   --shake-duration: 300ms;
-  /*transition: scale ease-in-out var(--scale-transition-duration)*/;
+  transition: none;
   animation:
       scale-bounce
-        ease-in-out
-        var(--scale-transition-duration)
-        forwards,
+      ease-in-out
+      var(--scale-transition-duration)
+      forwards,
       shake
-        linear
-        calc(var(--shake-duration) / 2)
-        2
-        var(--shake-delay);
+      linear
+      calc(var(--shake-duration) / 2)
+      2
+      var(--shake-delay);
+  border: 2px solid var(--color-upvote-active);
 }
-button[aria-checked="true"] svg[aria-label*="vote"] path {
-  stroke: black;
-  stroke-width: 5px;
-  stroke-opacity: 1;
+
+.card input[type="radio"] {
+  position: absolute;
+  appearance: none;
+  inset: 0;
+  cursor: pointer;
 }
-button[aria-checked="true"] svg[aria-label="Upvote"] {
-  color: var(--color-upvote-active);
+.card input[type="radio"]::before {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  font-size: 2rem;
 }
-button[aria-checked="true"] svg[aria-label="Downvote"] {
-  color: var(--color-downvote-active);
+.card input[type="radio"]:checked::before {
+  content: "✅";
 }
 
 @keyframes shake {
@@ -125,21 +105,5 @@ button[aria-checked="true"] svg[aria-label="Downvote"] {
   to {
     scale: var(--scale);
   }
-}
-
-.card output {
-  font-family: monospace;
-  min-width: 4ch;
-  display: inline-block;
-  text-align: center;
-  margin-inline: var(--spacing-related-items);
-}
-
-.card .controls {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background: var(--color-controls-background);
-  padding-inline: var(--spacing-related-items);
 }
 </style>

@@ -7,16 +7,17 @@ import AppHeader from "@/AppHeader.vue";
 import AppFooter from "@/AppFooter.vue";
 import Newsletter from "@/Newsletter.vue";
 
-const data = ref<Array<ImageType>>(rawData)
+const data = ref<Array<ImageType>>(rawData.data)
 </script>
 
 <template>
   <AppHeader/>
 
   <main>
-    <ul>
-      <ImageCard v-for="entry in data" :key="entry.src" :entry="entry"/>
-    </ul>
+    <form id="form-vote">
+      <ImageCard v-for="entry in data" :key="entry.src" :entry="entry" />
+      <button type="submit" form="form-vote"><strong>Vote now!</strong></button>
+    </form>
   </main>
 
   <Newsletter/>
@@ -59,7 +60,7 @@ main > aside {
   grid-column: right-gutter;
 }
 
-ul:has(.card) {
+form:has(.card) {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -68,5 +69,15 @@ ul:has(.card) {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-card-width)), 1fr));
   list-style: none;
   gap: var(--spacing-unrelated-items);
+  justify-items: center;
+}
+form:has(.card) button[type="submit"] {
+  font-size: 1.5rem;
+  grid-column: 1 / -1;
+}
+
+button {
+  padding: 3ch;
+  border: none;
 }
 </style>

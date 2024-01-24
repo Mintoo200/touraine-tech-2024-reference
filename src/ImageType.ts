@@ -1,1 +1,1 @@
-export type ImageType = { src: string, description: string, votes: number };
+export type ImageType = { id: string, description: string, votes: number };

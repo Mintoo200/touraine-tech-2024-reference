@@ -22,7 +22,7 @@
   justify-content: center;
   justify-items: center;
 }
-label::after {
+label:not(:has(> img:only-child))::after {
   content: ": "
 }
 button {
