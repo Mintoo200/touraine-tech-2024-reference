@@ -48,10 +48,13 @@ td {
 td::before {
   content: "";
   /* FIXME (GAFI 29-01-2024): Fix color */
-  background: red;
+  background: var(--cyan);
   width: 40%;
   --max-votes-safe: calc(var(--max-votes) + 1);
-  height: calc(var(--vote-count) / var(--max-votes-safe) * 40vh);
+  --vote-ratio: calc(var(--vote-count) / var(--max-votes-safe));
+  height: calc(var(--vote-ratio) * 40vh);
   display: block;
+  border-radius: .5rem .5rem 0 0;
+  opacity: var(--vote-ratio);
 }
 </style>
