@@ -6,9 +6,11 @@ import type {ImageType} from "@/ImageType";
 import AppHeader from "@/AppHeader.vue";
 import AppFooter from "@/AppFooter.vue";
 import Newsletter from "@/Newsletter.vue";
+import ResultTable from "@/ResultTable.vue";
 
 const data = ref<Array<ImageType>>(rawData.data)
 const queryParams = inject<URLSearchParams>('queryParams')
+const vote = queryParams?.get('vote');
 </script>
 
 <template>
@@ -16,12 +18,13 @@ const queryParams = inject<URLSearchParams>('queryParams')
 
   <main>
     <form id="form-vote">
-      <ImageCard v-for="entry in data" :key="entry.src" :entry="entry" />
+      <ImageCard v-for="entry in data" :key="entry.id" :entry="entry" />
       <button type="submit" form="form-vote"><strong>Vote now!</strong></button>
     </form>
 
-    <article>
-      {{ queryParams?.get('vote') }}
+    <article v-if="vote != null" autofocus tabindex="-1">
+      <h1>Top 5</h1>
+      <ResultTable :data="data" />
     </article>
   </main>
 

@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import type { ImageType } from '../ImageType'
+import type {ImageType} from '../ImageType'
 import rawData from '../assets/data.json'
 import {inject} from "vue";
+import CatImage from "@/components/CatImage.vue";
 
-const basepath = rawData.meta.basepath
-const imageDimensions = {
-  height: 100,
-  width: 180,
-}
 const props = defineProps<{ entry: ImageType }>()
 const {description, id} = props.entry
 const queryParams = inject<URLSearchParams>('queryParams')
@@ -17,7 +13,9 @@ const currentVote = queryParams?.get('vote')
 <template>
   <div class="card">
     <input type="radio" :id="`option-${id}`" name="vote" :value="id" :checked="currentVote === id">
-    <label :for="`option-${id}`"><img :src="`${basepath}?width=${imageDimensions.width}&height=${imageDimensions.height}&q=${id}`" :alt="description"></label>
+    <label :for="`option-${id}`">
+      <CatImage :entry="entry" />
+    </label>
   </div>
 </template>
 
