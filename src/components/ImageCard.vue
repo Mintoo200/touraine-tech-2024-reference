@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type {ImageType} from '../ImageType'
-import rawData from '../assets/data.json'
+import type {ImageType} from '@/ImageType'
 import {inject} from "vue";
 import CatImage from "@/components/CatImage.vue";
 
