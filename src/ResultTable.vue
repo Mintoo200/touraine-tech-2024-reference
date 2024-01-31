@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ImageType } from '../ImageType'
+import type { ImageType } from '@/ImageType'
 import CatImage from "@/components/CatImage.vue";
 
 const props = defineProps<{ data: ImageType[] }>();
@@ -17,8 +17,8 @@ const topImages = props.data.filter(entry => entry.votes >= 0)
     </tr>
     </thead>
     <tbody>
-    <tr :style="`--max-votes: ${topImages[0].votes}`">
-      <td v-for="entry in topImages" :style="`--vote-count: ${entry.votes}`">{{ entry.votes }}</td>
+    <tr :style="`--max-votes: ${topImages[0].votes}; --min-votes: ${topImages[topImages.length - 1].votes};`">
+      <td @click="$emit('toot')" v-for="entry in topImages" :style="`--vote-count: ${entry.votes}`">{{ entry.votes }}</td>
     </tr>
     </tbody>
   </table>
@@ -36,6 +36,7 @@ tr {
 
 tr {
   --max-votes: 0;
+  --min-votes: 0;
 }
 td {
   --vote-count: 0;
@@ -47,14 +48,18 @@ td {
 }
 td::before {
   content: "";
-  /* FIXME (GAFI 29-01-2024): Fix color */
-  background: var(--cyan);
-  width: 40%;
   --max-votes-safe: calc(var(--max-votes) + 1);
   --vote-ratio: calc(var(--vote-count) / var(--max-votes-safe));
+  --normalized-vote-ratio: calc((var(--vote-count) - var(--min-votes)) / (var(--max-votes) - var(--min-votes)));
+  /* FIXME (GAFI 29-01-2024): Fix color */
+  /* background: var(--cyan); */
+  --color-amplitude: 270deg;
+  background: hsl(calc(var(--normalized-vote-ratio) * var(--color-amplitude) + (360deg - var(--color-amplitude))), 100%, 50%);
+  --opacity-amplitude: 0.75;
+  opacity: calc(var(--normalized-vote-ratio) * var(--opacity-amplitude) + (1 - var(--opacity-amplitude)));
+  width: 40%;
   height: calc(var(--vote-ratio) * 40vh);
   display: block;
   border-radius: .5rem .5rem 0 0;
-  opacity: var(--vote-ratio);
 }
 </style>
