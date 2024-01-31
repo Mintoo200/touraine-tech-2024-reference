@@ -53,13 +53,17 @@ td::before {
   --normalized-vote-ratio: calc((var(--vote-count) - var(--min-votes)) / (var(--max-votes) - var(--min-votes)));
   /* FIXME (GAFI 29-01-2024): Fix color */
   /* background: var(--cyan); */
-  --color-amplitude: 270deg;
+  --color-amplitude: -120deg;
   background: hsl(calc(var(--normalized-vote-ratio) * var(--color-amplitude) + (360deg - var(--color-amplitude))), 100%, 50%);
   --opacity-amplitude: 0.75;
-  opacity: calc(var(--normalized-vote-ratio) * var(--opacity-amplitude) + (1 - var(--opacity-amplitude)));
+  opacity: calc((var(--normalized-vote-ratio) * var(--opacity-amplitude) + (1 - var(--opacity-amplitude))));
   width: 40%;
   height: calc(var(--vote-ratio) * 40vh);
   display: block;
   border-radius: .5rem .5rem 0 0;
+}
+
+th img {
+  max-width: 100%;
 }
 </style>

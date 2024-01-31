@@ -1,107 +1,62 @@
 {
   "meta": {
-    "basepath": "https://cataas.com/cat/cute"
+    "basepath": "/src/assets/Pixel"
   },
   "data": [
     {
-      "id": "1",
+      "id": "pixel1.webp",
       "description": "A flying cat",
       "votes": 72
     },
     {
-      "id": "2",
+      "id": "pixel2.webp",
       "description": "Loads of cats looking at the camera",
-      "votes": -85
+      "votes": 85
     },
     {
-      "id": "3",
+      "id": "pixel3.webp",
       "description": "A cat walking on fresh cement and ruining it",
-      "votes": 69
+      "votes": 400
     },
     {
-      "id": "4",
+      "id": "pixel4.webp",
       "description": "A cat with a sheriff vest",
       "votes": 59
     },
     {
-      "id": "5",
+      "id": "pixel5.webp",
       "description": "A cute kitten with their hand raised",
       "votes": 41
     },
     {
-      "id": "6",
-      "description": "A cat chillin' on the beach",
-      "votes": 379
+      "id": "pixel6.webp",
+      "description": "A cute kitten with their hand raised",
+      "votes": 250
     },
     {
-      "id": "7",
-      "description": "Curious kitten peeking through a cozy blanket fort.",
-      "votes": -25
+      "id": "pixel7.webp",
+      "description": "A cute kitten with their hand raised",
+      "votes": 200
     },
     {
-      "id": "8",
-      "description": "Playful cat chasing sunbeams in a serene garden.",
-      "votes": 138
-    },
-    {
-      "id": "9",
-      "description": "Fluffy feline napping on a sunlit windowsill.",
-      "votes": 359
-    },
-    {
-      "id": "10",
-      "description": "Mischievous cat batting at dangling toy mice.",
-      "votes": 107
-    },
-    {
-      "id": "11",
-      "description": "Elegant cat perched on a vintage bookshelf.",
-      "votes": -159
-    },
-    {
-      "id": "12",
-      "description": "Whiskered friend curled up in a soft basket.",
+      "id": "pixel8.webp",
+      "description": "A cute kitten with their hand raised",
       "votes": 442
     },
     {
-      "id": "13",
-      "description": "Adorable kitty with wide eyes and a tiny bow tie.",
-      "votes": -80
+      "id": "pixel9.webp",
+      "description": "A cute kitten with their hand raised",
+      "votes": 80
     },
     {
-      "id": "14",
-      "description": "Purring tabby nestled in a pile of autumn leaves.",
+      "id": "pixel10.webp",
+      "description": "A cute kitten with their hand raised",
       "votes": 313
     },
     {
-      "id": "15",
-      "description": "Sleepy cat nestled in a rainbow-colored blanket.",
-      "votes": -178
-    },
-    {
-      "id": "16",
-      "description": "Playful kittens wrestling in a sea of colorful yarn.",
-      "votes": -36
-    },
-    {
-      "id": "17",
-      "description": "Content cat enjoying a lazy afternoon on a sunny porch.",
-      "votes": 185
-    },
-    {
-      "id": "18",
-      "description": "Graceful feline balancing on a narrow fence post.",
-      "votes": 240
-    },
-    {
-      "id": "19",
-      "description": "Inquisitive kitty investigating a blooming field of flowers.",
-      "votes": 148
-    },
-    {
-      "id": "20",
-      "description": "A cat playing DJ",
-      "votes": 315
+      "id": "pixel11.webp",
+      "description": "A cute kitten with their hand raised",
+      "votes": 178
     }
   ]
 }

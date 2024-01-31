@@ -31,8 +31,6 @@ const currentVote = queryParams?.get('vote')
 .card img {
   width: 100%;
   display: block;
-  object-fit: cover;
-  aspect-ratio: 16/9;
 }
 
 .card:has(input[type="radio"]) {
