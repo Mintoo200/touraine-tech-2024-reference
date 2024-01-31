@@ -17,13 +17,14 @@ const vote = queryParams?.get('vote');
   <AppHeader/>
 
   <main>
+    <h1>Vote for Pixel!</h1>
     <form id="form-vote">
       <ImageCard v-for="entry in data" :key="entry.id" :entry="entry" />
       <button type="submit" form="form-vote"><strong>Vote now!</strong></button>
     </form>
 
     <article v-if="vote != null" autofocus tabindex="-1">
-      <h1>Top 5</h1>
+      <h2>Top 5</h2>
       <ResultTable :data="data" />
     </article>
   </main>
