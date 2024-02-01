@@ -19,9 +19,9 @@ data.value.find(image => image.id === vote).votes += 1;
 
   <main>
     <h1>Vote for Pixel!</h1>
-    <form id="form-vote">
+    <form>
       <ImageCard v-for="entry in data" :key="entry.id" :entry="entry" />
-      <button type="submit" form="form-vote"><strong>Vote now!</strong></button>
+      <button type="submit"><strong>Vote now!</strong></button>
     </form>
 
     <article v-if="vote != null" autofocus tabindex="-1">
