@@ -7,7 +7,7 @@ const { entry } = defineProps<{ entry: ImageType }>()
 const { description, id } = entry;
 </script>
 <template>
-  <img :src="`${basepath}/${id}`" :alt="description">
+  <img :src="`${basepath}/${id}`">
 </template>
 <style>
 img {
