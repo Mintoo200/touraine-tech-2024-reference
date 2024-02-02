@@ -17,8 +17,9 @@ const topImages = props.data.filter(entry => entry.votes >= 0)
     </tr>
     </thead>
     <tbody>
+    Votes:
     <tr :style="`--max-votes: ${topImages[0].votes}; --min-votes: ${topImages[topImages.length - 1].votes};`">
-      <td @click="$emit('toot')" v-for="entry in topImages" :style="`--vote-count: ${entry.votes}`">{{ entry.votes }}</td>
+      <td @click="$emit('toot')" v-for="entry in topImages" :style="`--vote-count: ${entry.votes}`" :vote-count="entry.votes">{{ entry.votes }}</td>
     </tr>
     </tbody>
   </table>
