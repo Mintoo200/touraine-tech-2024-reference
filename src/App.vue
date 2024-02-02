@@ -11,7 +11,10 @@ import ResultTable from "@/ResultTable.vue";
 const data = ref<Array<ImageType>>(rawData.data)
 const queryParams = inject<URLSearchParams>('queryParams')
 const vote = queryParams?.get('vote');
-data.value.find(image => image.id === vote).votes += 1;
+const currentVotedImage = data.value.find(image => image.id === vote);
+if (currentVotedImage != undefined) {
+  currentVotedImage.votes += 1;
+}
 </script>
 
 <template>
