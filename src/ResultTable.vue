@@ -96,4 +96,18 @@ td::before {
   display: block;
   border-radius: .5rem .5rem 0 0;
 }
+td {
+  position: relative;
+}
+td::after {
+  content: "";
+  border-bottom: 1px solid var(--color-text);
+  position: absolute;
+  grid-row: 1 / 2;
+  width: 100%;
+  height: 100%;
+}
+td:first-of-type::after {
+  border-left: 1px solid var(--color-text);
+}
 </style>
