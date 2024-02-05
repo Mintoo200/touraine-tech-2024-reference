@@ -21,7 +21,7 @@ const maxVotes = topImages[topImages.length - 1].votes;
     <tbody>
     Votes:
     <tr :style="`--max-votes: ${minVotes}; --min-votes: ${maxVotes};`">
-      <td @click="$emit('toot')" v-for="entry in topImages" :style="`--vote-count: ${entry.votes}`" :vote-count="entry.votes">{{ entry.votes }}</td>
+      <td @click="$emit('toot')" v-for="entry in topImages" :style="`--vote-count: ${entry.votes}`" :vote-count="entry.votes"></td>
     </tr>
     </tbody>
   </table>
@@ -68,8 +68,6 @@ td, th {
   --max-votes-safe: calc(var(--max-votes) + 1);
   --vote-ratio: calc(var(--vote-count) / var(--max-votes-safe));
   --normalized-vote-ratio: calc((var(--vote-count) - var(--min-votes)) / (var(--max-votes) - var(--min-votes)));
-  /* FIXME (GAFI 29-01-2024): Fix color */
-  /* background: var(--cyan); */
   --color-amplitude: -120deg;
   --vote-color: hsl(calc(var(--normalized-vote-ratio) * var(--color-amplitude) + (360deg - var(--color-amplitude))), 100%, 50%);
   --opacity-amplitude: 0.75;
