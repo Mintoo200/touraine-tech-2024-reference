@@ -27,10 +27,10 @@ if (currentVotedImage != undefined) {
       <button type="submit"><strong>Vote now!</strong></button>
     </form>
 
-    <article v-if="vote != null" autofocus tabindex="-1">
+    <section v-if="vote != null" autofocus tabindex="-1">
       <h2>Top 5</h2>
       <ResultTable :data="data" />
-    </article>
+    </section>
   </main>
 
   <Newsletter/>
@@ -95,8 +95,8 @@ button {
   border-radius: 100vmax;
 }
 
-article:focus,
-article:focus-visible {
+section:focus,
+section:focus-visible {
   outline: none;
 }
 </style>
