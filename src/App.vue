@@ -94,4 +94,9 @@ button {
   border: none;
   border-radius: 100vmax;
 }
+
+article:focus,
+article:focus-visible {
+  outline: none;
+}
 </style>
