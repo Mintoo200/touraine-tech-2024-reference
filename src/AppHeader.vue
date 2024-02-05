@@ -3,18 +3,18 @@ import Logo from "@/components/icons/Logo.vue";
 </script>
 
 <template>
-  <header>
+  <div class="header">
     <Logo aria-hidden="true" />
-    <menu>
-      <li><a href="#">About Pixel</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Contact</a></li>
-    </menu>
-  </header>
+    <div class="liens-header">
+      <a href="#">About Pixel</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
 </template>
 
 <style>
-header {
+.header {
   border-bottom: 1px solid var(--color-header-separator);
   margin-bottom: var(--spacing-unrelated-items);
   display: grid;
@@ -25,13 +25,13 @@ header {
   padding-block: var(--spacing-related-items);
 }
 
-menu {
+.liens-header {
   display: flex;
   list-style: none;
   gap: var(--spacing-indirectly-related-items);
   align-items: center;
 }
-menu li > a {
+.liens-header a {
   text-decoration: none;
 }
 .logo {

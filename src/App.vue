@@ -20,18 +20,18 @@ if (currentVotedImage != undefined) {
 <template>
   <AppHeader/>
 
-  <main>
+  <div>
     <h1>Vote for Pixel!</h1>
     <form>
       <ImageCard v-for="entry in data" :key="entry.id" :entry="entry" />
       <button type="submit"><strong>Vote now!</strong></button>
     </form>
 
-    <section v-if="vote != null" autofocus tabindex="-1">
+    <div v-if="vote != null" autofocus tabindex="-1">
       <h2>Top 5</h2>
       <ResultTable :data="data" />
-    </section>
-  </main>
+    </div>
+  </div>
 
   <Newsletter/>
 
@@ -60,8 +60,8 @@ body {
   }
 }
 
-body > header,
-body > footer {
+body > .header,
+body > .footer {
   grid-column: full-width;
 }
 body > *,
@@ -95,8 +95,8 @@ button {
   border-radius: 100vmax;
 }
 
-section:focus,
-section:focus-visible {
+div:focus,
+div:focus-visible {
   outline: none;
 }
 </style>

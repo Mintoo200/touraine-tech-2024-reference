@@ -6,7 +6,7 @@ import Website from "@/components/icons/Website.vue";
 </script>
 
 <template>
-  <footer>
+  <div class="footer">
     <address>
       <h2>Iris Naudin</h2>
       <ul>
@@ -42,11 +42,11 @@ import Website from "@/components/icons/Website.vue";
         &copy; 2023 Gauthier Fiorentino et Iris Naudin pour <a href="https://touraine.tech">TouraineTech</a>.
       </small>
     </p>
-  </footer>
+  </div>
 </template>
 
 <style>
-footer {
+.footer {
   text-align: center;
   margin-top: var(--spacing-unrelated-items);
   padding: var(--spacing-related-items);
@@ -55,23 +55,23 @@ footer {
   display: grid;
   justify-items: center;
 }
-footer address {
+.footer address {
   display: grid;
   grid-auto-columns: 1fr;
   justify-content: center;
   column-gap: var(--spacing-indirectly-related-items);
 }
-footer address > ul:has(> li > :any-link:only-child) {
+.footer address > ul:has(> li > :any-link:only-child) {
   margin-bottom: var(--spacing-unrelated-items);
 }
 @media (width > 100ch) {
-  footer address {
+  .footer address {
     grid-template-rows: [title-start copyright-start] auto [title-end links-start] auto [links-end copyright-start] auto [copyright-end];
   }
-  footer address > h2 {
+  .footer address > h2 {
     grid-row: title;
   }
-  footer address > ul:has(> li > :any-link:only-child) {
+  .footer address > ul:has(> li > :any-link:only-child) {
     grid-row: links;
   }
 }
