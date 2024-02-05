@@ -90,7 +90,8 @@ form:has(.card) button[type="submit"] {
 }
 
 button {
-  padding: 3ch;
+  padding: .5em 3ch;
   border: none;
+  border-radius: 100vmax;
 }
 </style>
