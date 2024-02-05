@@ -92,7 +92,11 @@ footer address > ul:has(> li > :any-link:only-child) {
 }
 :any-link svg {
   color: var(--color-text);
+  opacity: .3;
   max-height: 1rem;
+}
+:any-link:hover svg {
+  opacity: 1;
 }
 ul:has(> li > :any-link:only-child) {
   list-style: none;
