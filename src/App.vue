@@ -99,4 +99,8 @@ div:focus,
 div:focus-visible {
   outline: none;
 }
+*:focus,
+*:focus-visible {
+  outline: red;
+}
 </style>
