@@ -2,8 +2,7 @@
   <aside class="card newsletter">
     <h2>Newsletter</h2>
     <form action="/">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email">
+      <input type="email" name="email" placeholder="Email">
       <button>Subscribe!</button>
     </form>
   </aside>
