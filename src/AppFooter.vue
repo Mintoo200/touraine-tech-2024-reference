@@ -78,6 +78,7 @@ footer address > ul:has(> li > :any-link:only-child) {
 
 .copyright {
   text-align: center;
+  opacity: .3;
 }
 
 :any-link {
