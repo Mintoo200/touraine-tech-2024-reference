@@ -8,16 +8,10 @@ import Website from "@/components/icons/Website.vue";
 <template>
   <footer>
     <address>
-      <h2>Cécile Freyd-Foucault</h2>
+      <h2>Iris Naudin</h2>
       <ul>
-        <li><a href="https://twitter.com/cecilefreydf">
-          <Twitter/>
-        </a></li>
-        <li><a href="https://linkedin.com/in/cecile-freydfoucault">
+        <li><a href="https://linkedin.com/in/irisvnaudin">
           <LinkedIn/>
-        </a></li>
-        <li><a href="https://cecilefreydf.com/">
-          <Website/>
         </a></li>
       </ul>
       <h2>Pixel</h2>
@@ -45,7 +39,7 @@ import Website from "@/components/icons/Website.vue";
     </address>
     <p class="copyright">
       <small>
-        &copy; 2023 Gauthier Fiorentino et Cecile Freyd-Foucault pour <a href="https://touraine.tech">TouraineTech</a>.
+        &copy; 2023 Gauthier Fiorentino et Iris Naudin pour <a href="https://touraine.tech">TouraineTech</a>.
       </small>
     </p>
   </footer>
