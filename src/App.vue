@@ -5,7 +5,7 @@ import ImageCard from "./components/ImageCard.vue";
 import type {ImageType} from "@/ImageType";
 import AppHeader from "@/AppHeader.vue";
 import AppFooter from "@/AppFooter.vue";
-import Newsletter from "@/Newsletter.vue";
+import Newsletter from "@/components/Newsletter.vue";
 import ResultTable from "@/ResultTable.vue";
 
 const data = ref<Array<ImageType>>(rawData.data)
